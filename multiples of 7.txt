@@ -1,0 +1,12 @@
+def multipleOf_seven():
+  i=0
+  multiple=0
+  while multiple<=100:
+    print(multiple)
+    i+=1  
+    multiple=7*i
+    
+    
+
+
+multipleOf_seven()

@@ -1,0 +1,36 @@
+string_words=file_contents.lower()
+    
+    words_list=string_words.split(" ")
+    
+    new_words_list=[]
+    
+    for word in words_list:
+        hold=""
+        for w in word:
+            if w not in punctuations:
+                hold=hold+w
+                
+        if hold!="":
+            new_words_list.append(hold)    
+            
+    newer_new_words_list=[]        
+            
+    for word in new_words_list:
+        if word.isalpha():
+            newer_new_words_list.append(word)
+            
+            
+    final_list=[]        
+    for word in newer_new_words_list:    
+        if word not in uninteresting_words:
+            final_list.append(word)
+            
+    dictionary_of_words={}
+    demo_string=" ".join(final_list)
+    
+    for word in final_list:
+        num=demo_string.count(word)
+        if word not in dictionary_of_words:
+            dictionary_of_words[word]=num
+            
+    return dictionary_of_words    
